@@ -60,3 +60,75 @@ let anon = function() {
 }
 
 anon();
+
+/*
+function startCoffeeMaker (drinkToMake) {
+  console.log("I put " + drinkToMake + " in the coffee maker.")
+  console.log("I add water and hit start.")
+  console.log("And now I have a hot pot of " + drinkToMake + ".")
+}
+startCoffeeMaker("tea");
+*/
+
+//! Challenge 2: Take Home Challenge
+/*  
+Create a switch statement that takes in a value (number) that represents a grade.  If it is True, console log that they are passing with the correct letter grade.
+*   A: 89-100
+*   B: 79-88
+*   C: 66-78
+*   D: 59-65
+*   F: 0-59
+*/
+
+/*
+let grade = '93';
+
+switch(grade) {
+    case grade >= 89 :
+        console.log(`${grade} is an A`);
+        break;
+        / Once each case has been evaluated and we return a result, we need to note to "break" out from our switch statement.
+    case grade >=79 =<88 :
+        console.log(`${grade} is a B`);
+        break;
+    case grade >=66 =<78 :
+        console.log(`${grade} is a C`);
+        break;
+    case grade >=59 =<65 :
+        console.log(`${grade} is a D`);
+        break;
+    default :
+        console.log(`${grade} Sorry, you recieved an F`);
+        /Need to use a default to help us catch those cases when none are true
+}
+*/
+
+//? Parameters
+// Allow us to accept information already declared
+
+function parameterFunc(num) {
+    console.log(num);
+}
+
+parameterFunc(2);
+parameterFunc(9);
+
+let returnedVal = 5;
+parameterFunc(returnedVal);
+
+
+
+let firstName = "Jane";
+let lastName = "Doe";
+
+function greeting(first, last) {
+    console.log(`Hi, ${first}! Welcome back!`);
+    console.log(`This is the first parameter: ${first}`);
+    console.log(`This is the last parameter: ${last}`);
+}
+
+//greeting(firstName);
+// greeting(lastname);
+greeting(firstName, lastName);
+//greeting(firstName, null);
+//greeting('', lastName);

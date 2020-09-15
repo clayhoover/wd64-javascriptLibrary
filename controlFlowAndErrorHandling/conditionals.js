@@ -4,9 +4,9 @@ Conditionals
 * *****
 
 ? FALSY VALUES:
-    - false
-    - 0
-    - "", '', ``
+    - false          - boolean false
+    - 0              - number zero
+    - "", '', ``     - empty string
     - null
     - undefined
     - NaN (not a number)
