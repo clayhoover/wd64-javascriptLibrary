@@ -22,7 +22,7 @@ console.log(hoistedVar);
 // This process is considered the same within a function. On the first pass, it reads it, pushes the declarations to the top and then executes them in the order that they are written.
 
 function testHoist() {
-    cebomesGlobal ="not declared, it becomes part of the global scope";
+    becomesGlobal ="not declared, it becomes part of the global scope";
     console.log('Prior to declaring ', insideFunc);
     var insideFunc = "Rules still apply here";
     console.log(insideFunc);
