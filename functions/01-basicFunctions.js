@@ -37,7 +37,7 @@ functionName()
 
 //? Function Declaration
 
-// A chunk of cod that performs a set action when it is invoked
+// A chunk of code that performs a set action when it is invoked
 function funcOne() {
     console.log('Statement Here');
 }
