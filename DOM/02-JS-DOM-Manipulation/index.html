@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- All of our HTML code will go here -->
+    <h1>Hello World</h1>
+
+    <p id="testParagraph">sample text</p>
+    <p class="sampleClass">This paragraph has a class of 'sampleClass'</p>
+
+    <button id="clickThisButton">I want to be clicked</button>
+
+    <br>
+    <hr>
+
+    <label for="nameInput">Enter Your Name:</label>
+    <input type="text" id="nameInput" placeholder="John Smith" />
+
+    <p>Welcome!</p>
+    <p>No name has been entered</p>
+
+
+    <script type="text/javascript">
+        /* All of our JavaScript code will go here */
+        var x = 10;
+        console.log(x);
+        document.getElementById('testParagraph').style.color = 'blue';
+        console.log(document.getElementById('testParagraph').style.color);
+        /* Other ways to select elements on a page:
+            document.getElementsByTagName("p");
+            document.getElementsByClassName("classHere");
+            document.getElementById("idHere")
+            document.querySelectorAll("p.classNameHere")
+        */
+        console.log(document.querySelectorAll("p.sampleClass"));
+        document.querySelectorAll("p.sampleClass")[0].innerText = "My text was changed!";
+        /* What's the difference between innerText and innerHTML?
+        innerText will only reference the text displayed on the screen.
+        innerHTML will reference all HTML elements inside the tag. Let's do a quick test:
+        */
+        document.querySelectorAll("p.sampleClass")[0].innerHTML = "<span>I am a whole new element!</span>";
+        /*
+        If we wanted to remove elements, we can do the same thing in reverse! Simply set the innerHTML to be blank and it will erase the contents.
+        */
+
+        /* Event Listener Sytax
+        document.getElementById('clickThisButton').addEventListener('click', function goes here ); */
+
+        document.getElementById('clickThisButton').addEventListener('click', () => {
+            console.log('I was clicked!');
+        });
+        document.getElementById('clickThisButton').addEventListener('click', (details) => {
+        console.log(details);
+        });
+        document.getElementById('clickThisButton').addEventListener('click', (details) => {
+        details.target.style.backgroundColor = 'red';
+        });
+
+        /* KeyUp Event */
+        // document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        //     console.log(event);
+        // });
+        // document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        // console.log(event.target.value);
+        // });
+
+        document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        console.log(event.target.value);
+        console.log(document.getElementsByTagName("p"));
+        });
+
+        document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        document.getElementsByTagName("p")[1].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+        });
+
+        /* Returns back to No name has been entered */
+        document.getElementById('nameInput').addEventListener('keyup', (event) => {
+        if (event.target.value === '') {
+            document.getElementsByTagName("p")[1].innerText = `No name has been entered`;
+        } else {
+            document.getElementsByTagName("p")[1].innerText = `Everyone please welcome ${event.target.value} to the stage.`;
+        }
+        });
+    </script>
+</body>
+</html>

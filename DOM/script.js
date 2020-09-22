@@ -97,3 +97,4 @@ input.addEventListener('keyup', e => {
         document.getElementsByTagName('p')[1].innerText = `Everyone, say hello to ${e.target.value}`;
     }
 });
+

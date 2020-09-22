@@ -159,10 +159,10 @@ if(age <= 17) {
 
 let myName = 'Clay';
 
-if(myName == 'Tina') {
-    console.log('Hello, my name is ' + name + '.');
+if(myName == 'Clay') {
+    console.log('Hello, my name is ' + myName + '.');
 } else {
-    console.log('Hello, is your name ' + name + '?');
+    console.log('Hello, is your name ' + myName + '?');
 }
 
 //? condition ? if true : else result
