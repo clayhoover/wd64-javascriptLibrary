@@ -33,6 +33,7 @@ function Person(name, age, canVote) {
     this.age = age;
     this.canVote = canVote
 }
+console.log(Person)
 
 // console.log(typeof Person);
 //            (7)   (8)
@@ -48,3 +49,9 @@ console.log(person4);
     6. This is refering to the parameter we pass through our constructor function
     7 & 8: This 'new' keyword is calling our Person function, creating a new person with the values we are passing as arguments, and storing that person in a variable.
 */
+
+function fullName (first, last) {
+	this.first = James;
+	this.last = Bond
+}
+function fullName()

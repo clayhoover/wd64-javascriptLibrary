@@ -47,7 +47,7 @@ if(number === 0) {
 
 */
 
-
+/*
 //! Repl 1.2
 
 let movie = {
@@ -98,3 +98,26 @@ let movie = {
   console.log (movieObject.characters);
   console.log (movieObject.characters[0].name);
   console.log (movieObject.characters[0].items[0].itemOne);
+  */
+
+  //! Repl 2.1   This is not right...
+
+  let url = 'https://rickandmortyapi.com/api/character/';
+
+fetch('https://rickandmortyapi.com/api/character/')
+.then(function(response) {
+   if (!response.ok){ 
+    console.log(response);
+    return new Error(response);
+}
+console.log("Response:", response);
+  return response.blob(); 
+})
+.then(function(photoBlob) {
+  console.log("My Blob:", photoBlob)
+  var objectURL = URL.createObjectURL(photoBlob);
+  console.log("Object URL:", objectURL);
+
+  console.log("randomImage.src:", randomImage.src);
+})
+

@@ -51,7 +51,7 @@ for (foodItem of food) {
 }
 
 // Add to our array
-food.push('Piiza');   // Appends Pizza to the end of our array   *Adds to what already exists*
+food.push('Pizza');   // Appends Pizza to the end of our array   *Adds to what already exists*
 console.log('push: ', food);
 
 // Remove and insert
