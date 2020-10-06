@@ -1,19 +1,26 @@
 alert("You have 3 guesses. Guess between 1-10")
 
-var answer = 3;
-var guess;
+//var answer = 3;
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+var guess = prompt("What's your guess?");
 
 for( i = 0; i <= 10; i++){
-    guess = prompt("What's your guess?");
-    if (answer == guess) {
+    if (randomNumber == guess) {      //answer
         alert("You got it right!")
         break;
-    } else {
-        alert("Try again")
-    }
-    }
-}
+    } else if (guess > randomNumber) {
 
+        alert("Try again with a lower number");
+    
+    } else if (guess < randomNumber){
+        
+        alert("Try again with a higher number");
+    };
+};
+
+
+
+/*
 let randomNumber = Math.floor(Math.random() * 10) + 1;
 
 const guesses = document.querySelector('.guesses');
@@ -29,3 +36,4 @@ let resetButton;
 function checkGuess() {
     alert('I am a placeholder');
   }
+  */
