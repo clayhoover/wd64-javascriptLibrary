@@ -107,21 +107,21 @@ console.log(bool.toString());
             3. The array object itself
 */
 
-// arrayObject.forEach((value, index) => return);
+ //arrayObject.forEach((value, index) => return);
 
 let foodList = ['apple', 'pear', 'mushroom', 'cheese', 'peach'];
 
-// for(let i = 0; i < foodList.length; i++){
-//     console.log(foodList[i]);
-// }
+for(let i = 0; i < foodList.length; i++){
+    console.log(foodList[i]);
+ }
 
 function logItem(item){
     console.log(item)
 }
 
 // We invoke callback function for each element within our array.
-//foodList.forEach(foodItem => console.log(foodItem));
-foodList.forEach(logItem);
+foodList.forEach(foodItem => console.log(foodItem));
+//foodList.forEach(logItem);
 // A callback function is another function we invoke within our main function
 
 // function print(callback) {
