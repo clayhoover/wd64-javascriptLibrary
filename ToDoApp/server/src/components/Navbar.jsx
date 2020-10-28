@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
+import { checkPropTypes } from 'prop-types';
 
 const NavbarComponent = () => {
     //      var       function
@@ -20,12 +21,29 @@ const NavbarComponent = () => {
             <NavbarToggler onClick= { toggleNavbarMenu }  />
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="ml-auto" navbar>
-                    <NavItem>
-                        <p>Lists</p>
-                    </NavItem>
-                    <NavItem>
-                        <Link to="/login">Login</Link>
-                    </NavItem>
+                    {
+                        props.isLoggedIn
+                        ? (
+                            <>
+                            <NavItem>
+                            <p>Lists</p>
+                            </NavItem>
+                            <NavItem>
+                                <p>Logout</p>
+                            </NavItem>
+                            </>
+                        ) : (
+                            <>
+                            <NavItem>
+                             <Link to="/login">Login</Link>
+                            </NavItem>
+                            {/* Add a Regester Button*/}
+                            <NavItem>
+                            <Link to="/register">register</Link>
+                            </NavItem>
+                            </>
+                        )
+                    }
                 </Nav>
             </Collapse>
         </Navbar>

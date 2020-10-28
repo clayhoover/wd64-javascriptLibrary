@@ -32,7 +32,6 @@ router.get('/mycontacts', function(req, res) {
     ]);
 });
 
-//8
 
 */
 
@@ -57,7 +56,7 @@ router.get('/mycontacts', function(req, res) {
 
 router.post('/two', function (req, res) {
     let testData = "Test data for endpoint two"; 
-    
+
     TestModel.create({
         testdata: testData
     })

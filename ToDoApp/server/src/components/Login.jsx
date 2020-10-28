@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Form, Label, FormGroup, Button, Input } from 'reactstrap';
 
+import "../styles/Login.css";
+
 // Challenge
 // Create 2 state variables, and wire up the two input fields with the state variables
 
@@ -25,12 +27,30 @@ const LogInComponent = (props) => {
 
     const handleLoginSubmit = (event) => {
         event.preventDefault();
-        console.log("Login triggered");
-        console.log(email, password);
+       // if both the email and password are present
+       // send them off to the api to verify if it is a user
+       // if resoponse is OK, take the token and call the props.authenticate function with that token
+       // if the response is NOT OK, display an error message, but do nothing
+       if (email && password) {
+           fetch('http://localhost:3000/user/login', {
+               method: "POST",
+               headers: {
+                   "Content-Type": "application/json"
+               },
+               body: JSON.stringify({
+                   email: email,
+                   password: password
+               }),
+           }).then(response => response.json())
+           .then(data => {
+               props.authenticateUser(data.token);
+           })
+           .catch((error) => console.log(error));
+       }
     };
 
     return (
-    <Form>
+    <Form  id="loginForm" classname= "authform" onSubmit={handleLoginSubmit}>
         <h3>Login</h3>
         <FormGroup>
             <Label htmlFor="email">Email:</Label>
